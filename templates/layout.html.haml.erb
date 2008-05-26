@@ -1,0 +1,10 @@
+!!! strict
+%html
+  %head
+    %title New app
+    = stylesheet_link_tag "scaffold"
+    = yield :javascript
+    = yield :head
+  
+  %body
+    = yield

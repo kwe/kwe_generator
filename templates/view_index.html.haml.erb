@@ -1,0 +1,17 @@
+%h1 Listing <%= plural_name %>
+
+%p Change this page!
+
+<% for attribute in attributes -%>
+%p <%=attribute.column.human_name%>
+<% end -%>
+
+- for <%= singular_name %> in @<%= plural_name %>
+  <% for attribute in attributes -%>
+=h <%= singular_name %>.<%= attribute.name %>
+  <% end %>
+  = link_to 'Show', <%= path_for(table_name, singular_name, "show").gsub(/@/, "") %>
+  = link_to 'Edit', <%= path_for(table_name, singular_name, "edit").gsub(/@/, "") %>
+  = link_to 'Destroy', <%= path_for(table_name, singular_name, "destroy").gsub(/@/, "") %>, :confirm => "Are you sure?", :method => :delete
+  %br    
+= link_to 'New <%= singular_name.singularize %>', new_<%= table_name.singularize %>_path
