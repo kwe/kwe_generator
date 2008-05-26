@@ -1,0 +1,12 @@
+Basically the standard Rails generator hacked with some small stuff from rspec-haml-scaffold-generator, minus Rspec and some tables.
+
+To use..
+
+Make a  ~/.rails/generators folder and git clone it there.
+
+Usage..
+
+rails newapp
+haml --rails newapp
+cd newapp
+./script/generate kwe_scaffold Post title:string body:text
